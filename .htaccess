@@ -1,0 +1,21 @@
+# USER ACCESS WHITELIST
+<Limit GET POST>
+ order deny,allow
+ deny from all
+ allow from c-73-157-7-42.hsd1.wa.comcast.net
+ allow from c-73-97-119-63.hsd1.wa.comcast.net
+ allow from 104.200.154.88
+ allow from 45.55.24.75
+</Limit>
+# END USER ACCESS WHITELIST
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /sweetlily/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /sweetlily/index.php [L]
+</IfModule>
+# END WordPress
