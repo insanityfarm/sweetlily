@@ -135,3 +135,7 @@ https://static.pexels.com/photos/6762/wood-light-fashion-people.jpg
 ### 1.1.1 - October 13, 2016
 * Date can now be displayed in each post
 * featured and slide category fix
+
+### 1.1.2 - July 12, 2017
+* Code improvements
+* minor fixes

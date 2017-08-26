@@ -44,3 +44,4 @@ ehthumbs.db
 .modgit/
 .viminfo
 .gitconfig
+.local
