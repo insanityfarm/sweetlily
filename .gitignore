@@ -2,6 +2,7 @@
 .cache
 .htpasswd
 .profile
+.ssh
 .vimrc
 
 wp-config.php
