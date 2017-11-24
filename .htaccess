@@ -1,26 +1,10 @@
-# USER ACCESS WHITELIST
-<Limit GET POST>
- order deny,allow
- deny from all
- allow from c-76-104-200-41.hsd1.wa.comcast.net
- allow from c-73-157-7-42.hsd1.wa.comcast.net
- allow from c-73-97-119-63.hsd1.wa.comcast.net
- allow from 104.200.154.88
- allow from 45.55.24.75
- allow from 174.56.51.90
- allow from 66.235.35.77
- allow from 192.168.33.1
-</Limit>
-# END USER ACCESS WHITELIST
-
-# BEGIN WordPress
+# BEGIN WORDPRESS
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /index.php [L]
 </IfModule>
-
-# END WordPress
+# END WORDPRESS

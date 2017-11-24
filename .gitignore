@@ -1,4 +1,8 @@
-.htaccess
+.bashrc
+.cache
+.htpasswd
+.profile
+.vimrc
 
 wp-config.php
 wp-config*.php*
@@ -8,7 +12,6 @@ readme.html
 
 wp-content/uploads/
 wp-content/cache/
-
 wp-content/themes/index.php
 
 node_modules
