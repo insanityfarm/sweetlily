@@ -3,6 +3,7 @@
 .htpasswd
 .profile
 .ssh
+.sudo_as_admin_successful
 .vimrc
 
 wp-config.php
