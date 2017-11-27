@@ -96,6 +96,7 @@ function sccss_render_submenu_page() {
 
 	$options = get_option( 'sccss_settings' );
 	$content = isset( $options['sccss-content'] ) && ! empty( $options['sccss-content'] ) ? $options['sccss-content'] : __( '/* Enter Your Custom CSS Here */', 'simple-custom-css' );
+	$customPath = isset( $options['sccss-custom-path'] ) && ! empty( $options['sccss-custom-path'] ) ? $options['sccss-custom-path'] : '';
 
 	if ( isset( $_GET['settings-updated'] ) ) : ?>
 		<div id="message" class="updated"><p><?php _e( 'Custom CSS updated successfully.', 'simple-custom-css' ); ?></p></div>
@@ -113,6 +114,14 @@ function sccss_render_submenu_page() {
 			</div>
 			<div id="template">
 				<?php do_action( 'sccss-form-top' ); ?>
+                <div>
+                    <table style="margin-right: 14px;">
+                        <tr>
+                            <td><label for="sccss_settings[sccss-custom-path]">Custom&nbsp;path&nbsp;to&nbsp;stylesheet:</label></td>
+                            <td width="100%"><input type="text" name="sccss_settings[sccss-custom-path]" id="sccss_settings[sccss-custom-path]" value="<?php echo esc_html( $customPath ); ?>" style="width: 100%;"></td>
+                        </tr>
+                    </table>
+                </div>
 				<div>
 					<textarea cols="70" rows="30" name="sccss_settings[sccss-content]" id="sccss_settings[sccss-content]" ><?php echo esc_html( $content ); ?></textarea>
 				</div>

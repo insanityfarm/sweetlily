@@ -13,11 +13,15 @@ if( ! defined( 'SCCSS_FILE' ) ) {
  * it writes its PHP/CSS to the browser.
  */
 function sccss_register_style() {
+
+	$options = get_option( 'sccss_settings' );
 	$url = home_url();
 
 	if ( is_ssl() ) {
 		$url = home_url( '/', 'https' );
 	}
+
+	$url .= isset( $options['sccss-custom-path'] ) ? "/" . $options['sccss-custom-path'] : '';
 
 	wp_register_style( 'sccss_style', add_query_arg( array( 'sccss' => 1 ), $url ) );
 
