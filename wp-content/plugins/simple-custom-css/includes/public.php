@@ -15,13 +15,13 @@ if( ! defined( 'SCCSS_FILE' ) ) {
 function sccss_register_style() {
 
 	$options = get_option( 'sccss_settings' );
-	$url = home_url();
+	$stylesheetPath = isset( $options['sccss-custom-path'] ) ? $options['sccss-custom-path'] : '/';
+
+	$url = home_url($stylesheetPath);
 
 	if ( is_ssl() ) {
-		$url = home_url( '/', 'https' );
+		$url = home_url( $stylesheetPath, 'https' );
 	}
-
-	$url .= isset( $options['sccss-custom-path'] ) ? "/" . $options['sccss-custom-path'] : '';
 
 	wp_register_style( 'sccss_style', add_query_arg( array( 'sccss' => 1 ), $url ) );
 
